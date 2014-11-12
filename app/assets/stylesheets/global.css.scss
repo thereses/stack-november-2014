@@ -1,0 +1,329 @@
+@import url(http://fonts.googleapis.com/css?family=Lora:400italic,700italic);
+
+$bg: #1E1F21;
+$textColour: #ffffff;
+$primaryColour: #B41D6D;
+$secondaryColour: #00AB53;
+$linkColour: #0091FF;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $bg;
+  color: $textColour;  
+  
+  font-family: "Lora", Times New Roman;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+
+  width: 960px;
+  margin: 0 auto;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  font-size: 16px;
+  font-weight: 700;
+
+  float: left;
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  border-right: 1px solid $primaryColour;
+  
+  h1 {
+    margin: 40px 0 20px;
+    height: 40px;
+  }
+
+  h1 a {
+    height: 15px;
+    line-height: 0;
+    font-size: 0.1px;
+  }
+
+  img {
+    width: 56px;
+    vertical-align: bottom;
+  }
+}
+
+nav a {
+  display: block;
+}
+
+article {
+  float: right;
+  width: 820px;
+  margin: 90px 0 40px;
+}
+
+footer {
+  font-size: 12px;
+  margin-top: 40px;
+  clear: both;
+}
+
+ul.category-list {
+  overflow: hidden;
+  margin-bottom: 40px;
+
+  .details {
+    font-size: 81px;
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  li {
+    margin: 0 0 0px;
+
+    &:hover .actions {
+      opacity: 1;
+    }
+  }
+
+}
+
+a {
+  color: $linkColour;
+  text-decoration: none;
+  transition: color 0.25s, border 0.25s;
+
+  &:hover {
+    color: $secondaryColour;
+  }
+}
+
+.story {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $primaryColour;
+
+  p {
+    margin: 10px 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 32px;
+
+  a {
+    color: $primaryColour;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  margin: 40px 0 0;
+  color: $secondaryColour;
+}
+
+
+div.comment {
+  padding: 20px 0;
+  border-bottom: 1px solid $primaryColour;
+
+  p:last-child {
+    font-size: 12px;
+  }
+}
+
+div.comments {
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+section {
+  margin-bottom: 40px;
+
+
+  div.link {
+    margin: 20px 0;
+    transition: opacity 0.25s;
+  }
+
+  .hide {
+    opacity: 0.25;
+  }
+
+
+  p {
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 1px;
+    margin: 10px 0;
+  }
+}
+
+form {
+  padding: 10px 0 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+div.boolean label {
+  display: inline;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+label abbr {
+  float: right;
+  color: $primaryColour;
+}
+
+div.input {
+  margin: 0 0 20px;
+}
+
+label {
+  float: left;
+  width: 105px;
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="password"],
+input[type="submit"],
+textarea {
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $textColour;
+  padding: 0px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $textColour;
+  outline: none;
+
+  /*width: 100%;*/
+  width: 705px;
+
+  transition: border 0.5s;
+
+  &:focus {
+    border-color: $primaryColour;
+  }
+}
+
+textarea {
+  resize: vertical;
+  height: 300px;
+}
+
+input[type="submit"], a.button {
+  width: auto;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+
+  border: none;
+  color: $textColour;
+  transition: color 0.5s;
+
+  &:hover {
+    color: $secondaryColour;
+  }
+}
+
+input[type="submit"] {
+  float: right;
+}
+
+span.error {
+  display: block;
+  text-align: right;
+}
+
+a.button {
+  display: inline-block;
+}
+
+
+div.link {
+  overflow: hidden;
+
+  div.actions {
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:hover div.actions {
+    opacity: 1;
+  }
+}
+
+
+
+a.edit {
+  background: url(/assets/edit.png) 0 4px no-repeat;
+  background-size: 16px;
+  padding-left: 23px;
+}
+
+a.delete {
+  background: url(/assets/trash.png) 2px 4px no-repeat;
+  background-size: 12px;
+  padding-left: 23px;
+}
+
+span {
+  color: $secondaryColour;
+}
+
+.flash {
+  color: $secondaryColour;
+  padding: 10px 0 0;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.link-list {
+  margin-bottom: 40px;
+}
+
+.actions {
+  margin: 10px 0;
+
+  a {
+    margin-right: 10px;
+  }
+}

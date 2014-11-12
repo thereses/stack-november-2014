@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stack</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<nav>
+		<%= link_to "Top", root_path(sort: "top") %>
+		<%= link_to "Recent", root_path %>
+		<%= link_to "Featured", root_path %>
+		<%= link_to "Add a post", new_post_path %>
+		<%# link_to "Edit a post", edit_post_path(@post) %>
+	</nav>
+
+</header>
+<%# = @post.errors.full_messages %>
+<article>
+	<% flash.each do |key, value| %>
+	<span class="<%= key %>">
+		<p><%= value %></p>
+	</span>
+	<% end %>
+<%= yield %>
+</article>
+</body>
+</html>

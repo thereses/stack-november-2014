@@ -1,0 +1,15 @@
+<p>Link:<%=  link_to @post.title, @post.url  %></p>
+<h1><%=  @post.title  %></h1>
+<p><%=  simple_format @post.body  %></p>
+<small><%= time_ago_in_words @post.created_at %> </small>
+<ul>
+	<li><%= link_to "Upvote", post_votes_path(@post), method: :post %></li>
+	<li><%= @votes.count %> votes</li>
+	<li><%= link_to "Edit", edit_post_path(@post)  %></li>
+	<li><%= link_to "Add a comment", new_post_comment_path(@post)  %></li>
+</ul>
+<% @post.comments.each do |comment| %>
+<p>Comment: <br>
+	<%= simple_format comment.body %>
+</p>
+<% end %>
