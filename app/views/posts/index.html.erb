@@ -1,20 +1,20 @@
 
 <article>
 	<% @posts.each do |post| %>
-	
-		<section class="story"> 
+
+		<section class="story">
 			<h1><%= link_to post.title, post.url  %></h1>
 			<p><%= simple_format post.body  %></p>
 			<ul>
 				<li><%= link_to "Upvote", post_votes_path(post), method: :post %></li>
 				<li><%= pluralize post.votes.count, 'vote' %>  </li>
-				<% records = Comment.where("post_id = ?", post.id ) %> 
+				<% records = Comment.where("post_id = ?", post.id ) %>
 				<% pluralized = pluralize records.count, 'comment' %>
 				<li><%= link_to pluralized, post_path(post)  %></li>
 				<li><%= time_ago_in_words post.created_at %> ago </li>
 			</ul>
 		</section>
-	
+
 	<% end %>
 </article>
 

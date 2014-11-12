@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112113311) do
+ActiveRecord::Schema.define(version: 20141112130755) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141112113311) do
     t.datetime "updated_at"
     t.string   "url"
     t.integer  "votes_count", default: 0
+    t.boolean  "is_featured", default: false
   end
 
   add_index "posts", ["votes_count"], name: "index_posts_on_votes_count"

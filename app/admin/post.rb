@@ -13,6 +13,6 @@ ActiveAdmin.register Post do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-permit_params :title, :body, :url, :votes_count
+permit_params :title, :body, :url, :votes_count, :is_featured
 
 end

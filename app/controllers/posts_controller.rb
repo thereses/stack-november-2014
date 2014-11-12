@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 				@posts = Post.order("votes_count DESC")
 			elsif params[:sort] == 'recent'
 				@posts = Post.order("created_at DESC")
+			elsif params[:sort] == 'featured'
+				@posts = Post.where(is_featured:true)
 			else
 				@posts = Post.all
 			end
@@ -20,7 +22,7 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 	def create
-		@post = Post.new(post_params) 
+		@post = Post.new(post_params)
 		if @post.save
 			flash[:success] = "Thanks for adding your post" #{@post.title}
 			redirect_to post_path(@post)
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
 	end
 	def update
 		@post = Post.find(params[:id])
-		if @post.update(post_params) 
+		if @post.update(post_params)
 			flash[:success] = "Thanks for updating your post"
 			redirect_to post_path(@post)
 		else
